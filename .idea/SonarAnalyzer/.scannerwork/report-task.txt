@@ -2,5 +2,5 @@ projectKey=SonarAnalyzer:avg_consol
 serverUrl=http://localhost:9000
 serverVersion=25.3.0.104237
 dashboardUrl=http://localhost:9000/dashboard?id=SonarAnalyzer%3Aavg_consol
-ceTaskId=87c4c0c3-2327-4bcd-9261-99430a86e4b0
-ceTaskUrl=http://localhost:9000/api/ce/task?id=87c4c0c3-2327-4bcd-9261-99430a86e4b0
+ceTaskId=fdaf67c3-7e32-4f61-82dc-45d958aaf9ce
+ceTaskUrl=http://localhost:9000/api/ce/task?id=fdaf67c3-7e32-4f61-82dc-45d958aaf9ce
