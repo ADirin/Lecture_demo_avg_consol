@@ -1,20 +1,13 @@
-# Use an official Maven image as a parent image
-FROM maven:latest
-
-# Set metadata information
-LABEL authors="amirdi"
-
-# Set the working directory in the container
+# ---------- Build stage ----------
+FROM maven:3.9-eclipse-temurin-21 AS build
 WORKDIR /app
+COPY pom.xml .
+COPY src ./src
+RUN mvn clean package -DskipTests
 
-# Copy the pom.xml file to the container
-COPY pom.xml /app/
-
-# Copy the entire project to the container
-COPY . /app/
-
-# Package your application
-RUN mvn package
-
-# Run the main class (assuming your application has a main class)
-CMD ["java", "-jar", "target/avgspd1_pod.jar"]
+# ---------- Runtime stage ----------
+FROM eclipse-temurin:21-jre
+WORKDIR /app
+COPY --from=build /app/target/avgspd1_pod.jar app.jar
+EXPOSE 8081
+ENTRYPOINT ["java", "-jar", "app.jar"]
