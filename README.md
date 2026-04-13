@@ -1,15 +1,23 @@
-📌 Features
+This project is a Java‑based Average Speed Calculator implemented as a lightweight HTTP server.
+The application is:
 
-Simple HTTP server using HttpServer
-Average speed calculation (distance / time)
-Input validation and error handling
-Unit tests with JUnit 5 and Mockito
-Code coverage with JaCoCo
-Static code analysis with SonarQube
-Containerized with Docker
-Deployed in Kubernetes (Minikube)
+✅ tested and analyzed using SonarQube
+✅ packaged as a Docker container
+✅ deployed and run in Kubernetes (Minikube)
+✅ accessed locally using port‑forwarding
 
-🔍 SonarQube Configuration
+📌## Features
+
+- Simple HTTP server using HttpServer
+- Average speed calculation (distance / time)
+- Input validation and error handling
+- Unit tests with JUnit 5 and Mockito
+- Code coverage with JaCoCo
+- Static code analysis with SonarQube
+- Containerized with Docker
+- Deployed in Kubernetes (Minikube)
+
+🔍## SonarQube Configuration
 Create sonar-project.properties in the project root:
 ````xml
 sonar.projectKey=avg_consol
@@ -24,15 +32,15 @@ sonar.junit.reportPaths=target/surefire-reports
 sonar.jacoco.reportPaths=target/jacoco.exec
 sonar.sourceEncoding=UTF-8
 ````
-Run analysis
+## Run analysis
 ```
 mvn clean test
 mvn sonar:sonar
 ```
 Ensures >80% test coverage and clean‑code compliance.
 
-🐳 Docker
-Dockerfile (multi‑stage)
+🐳## Docker
+### Dockerfile (multi‑stage)
 
 ```xml
 # ---------- Build stage ----------
@@ -49,13 +57,13 @@ COPY --from=build /app/target/avgspd1_pod.jar app.jar
 EXPOSE 8081
 ENTRYPOINT ["java", "-jar", "app.jar"]
 ```
-Build Docker image (Minikube)
+## Build Docker image (Minikube)
 ```
 minikube docker-env | Invoke-Expression
 docker build --no-cache -t avgspeed-pod-app:1.0 .
 ```
-☸ Kubernetes (Minikube)
-Deployment YAML (interactive pod)
+☸ ## Kubernetes (Minikube)
+### Deployment YAML (interactive pod)
 Create avgspeed1-app.yaml:
 ```
 apiVersion: apps/v1
@@ -83,13 +91,13 @@ spec:
               value: "-Djava.awt.headless=true -Dprism.order=sw"
 
 ```
-Deploy to Minikube
+### Deploy to Minikube
 
 ```
 kubectl apply -f avgspeed1-app.yaml
 kubectl get pods
 ```
-✅ Pod status should be:
+✅ ### Pod status should be:
 ```
 avgspeed1-app-xxxxx   1/1   Running
 ```
@@ -97,7 +105,7 @@ open browser
 ```
 http://localhost:8081
 ```
-📜 Logs & Maintenance
+📜 ### Logs & Maintenance
 View logs
 ```
 kubectl logs -l app=avgspeed1-app
@@ -111,22 +119,22 @@ Clean up
 kubectl delete deployment avgspeed1-app
 ```
 -------------------------------------
-⚠️ Important Notes
+⚠️## Important Notes
 
-One Docker image per application
-Do not reuse images for JavaFX/FXML apps
-Avoid latest tags during development
-GUI (FXML/JavaFX) applications should not run in Kubernetes
-Always launch Java apps with java -jar
+- One Docker image per application
+- Do not reuse images for JavaFX/FXML apps
+- Avoid latest tags during development
+- GUI (FXML/JavaFX) applications should not run in Kubernetes
+- Always launch Java apps with java -jar
 ----------------------------------------------
 
-📚 Technologies Used
+📚## Technologies Used
 
-Java 21
-Maven
-JUnit 5 & Mockito
-JaCoCo
-SonarQube
-Docker
-Kubernetes (Minikube)
+- Java 21
+- Maven
+- JUnit 5 & Mockito
+- JaCoCo
+- SonarQube
+- Docker
+- Kubernetes (Minikube)
 
