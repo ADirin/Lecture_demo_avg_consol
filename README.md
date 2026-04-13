@@ -1,10 +1,10 @@
 This project is a Java‑based Average Speed Calculator implemented as a lightweight HTTP server.
 The application is:
 
-✅ tested and analyzed using SonarQube
-✅ packaged as a Docker container
-✅ deployed and run in Kubernetes (Minikube)
-✅ accessed locally using port‑forwarding
+- tested and analyzed using SonarQube
+- packaged as a Docker container
+- deployed and run in Kubernetes (Minikube)
+- accessed locally using port‑forwarding
 
 📌## Features
 
