@@ -17,4 +17,4 @@ COPY . /app/
 RUN mvn package
 
 # Run the main class (assuming your application has a main class)
-CMD ["java", "-jar", "target/avgspd1.jar"]
+CMD ["java", "-jar", "target/avgspd1_pod.jar"]

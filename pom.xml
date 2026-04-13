@@ -25,8 +25,25 @@
 
 
         <build>
-            <finalName>avgspd1</finalName>
+            <finalName>avgspd1_pod</finalName>
             <plugins>
+
+
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-jar-plugin</artifactId>
+                    <version>3.3.0</version>
+                    <configuration>
+                        <archive>
+                            <manifest>
+                                <mainClass>org.example.AvgSpd1_POD</mainClass>
+                            </manifest>
+                        </archive>
+                    </configuration>
+                </plugin>
+
+
+
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-surefire-plugin</artifactId>
@@ -35,7 +52,7 @@
                     <configuration>
                         <argLine>@{argLine}</argLine>
                         <excludes>
-                            <exclude>**/AvgSpd1.class</exclude>
+                            <exclude>**/AvgSpd1_POD.class</exclude>
                         </excludes>
                     </configuration>
                 </plugin>
@@ -69,7 +86,7 @@
                     <configuration>
                         <archive>
                             <manifest>
-                                <mainClass>org.example.AvgSpd1</mainClass>
+                                <mainClass>org.example.AvgSpd1_POD</mainClass>
                             </manifest>
                         </archive>
                     </configuration>
