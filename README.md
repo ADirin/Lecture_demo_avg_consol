@@ -101,6 +101,10 @@ kubectl get pods
 ```
 avgspeed1-app-xxxxx   1/1   Running
 ```
+RUN the pod
+```
+ kubectl port-forward pod/avgspeed1-app-7784fd9f6c-kj9b2 8081:8081
+```
 open browser
 ```
 http://localhost:8081
