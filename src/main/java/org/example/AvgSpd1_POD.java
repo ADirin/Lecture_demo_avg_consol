@@ -26,7 +26,7 @@ public class AvgSpd1_POD {
         server.setExecutor(null);
         server.start();
 
-        logger.info("Server started on port " + port);
+        logger.info("Server started on port " + 8081);
     }
 
     // ---------- Root page ----------

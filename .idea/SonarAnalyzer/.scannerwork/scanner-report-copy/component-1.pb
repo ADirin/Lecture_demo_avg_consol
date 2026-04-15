@@ -1,1 +1,1 @@
- :RSonarAnalyzer:avg_consol
+ :RSonarAnalyzer:avg_consol

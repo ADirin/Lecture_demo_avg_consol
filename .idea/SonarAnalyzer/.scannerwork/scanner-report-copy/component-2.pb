@@ -1,1 +1,1 @@
- 2javaX%hr&src/main/java/org/example/AvgSpd1.java
+ 2javaX%hr&src/main/java/org/example/AvgSpd1.java

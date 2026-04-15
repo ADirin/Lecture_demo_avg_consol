@@ -10,10 +10,8 @@ pipeline {
         SONARQUBE_SERVER = 'SonarQubeServer'  // The name of the SonarQube server configured in Jenkins
         SONAR_TOKEN = 'squ_36ddcb7129eea21de9e6ef95dd0081b14220ecce' // Store the token securely
         DOCKERHUB_CREDENTIALS_ID = 'Docker_Hub'
-        DOCKERHUB_REPO = 'amirdirin/lectdemo5_pod_2026'
+        DOCKERHUB_REPO = 'amirdirin/lectdemo3011_pod_2026'
         DOCKER_IMAGE_TAG = 'latest'
-
-
     }
 
     stages {
@@ -34,9 +32,9 @@ pipeline {
                 withSonarQubeEnv('SonarQubeServer') {
                     bat """
                                 ${tool 'SonarScanner'}\\bin\\sonar-scanner ^
-                                -Dsonar.projectKey=devops-demo ^
+                                -Dsonar.projectKey=avg_consol ^
                                 -Dsonar.sources=src ^
-                                -Dsonar.projectName=DevOps-Demo ^
+                                -Dsonar.projectName=avg_consol ^
                                 -Dsonar.host.url=http://localhost:9000 ^
                                 -Dsonar.login=${env.SONAR_TOKEN} ^
                                 -Dsonar.java.binaries=target/classes
