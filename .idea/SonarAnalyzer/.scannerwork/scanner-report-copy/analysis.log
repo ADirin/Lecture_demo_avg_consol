@@ -7,7 +7,7 @@ Bundled analyzers:
 Global server settings:
   - sonar.azureresourcemanager.file.suffixes=.bicep
   - sonar.core.id=147B411E-AZYjvtPArM4M3XkOXwNp
-  - sonar.core.startTime=2026-04-11T18:50:47+0300
+  - sonar.core.startTime=2026-04-14T20:30:45+0300
   - sonar.cs.file.suffixes=.cs,.razor
   - sonar.css.file.suffixes=.css,.less,.scss,.sass
   - sonar.docker.file.patterns=Dockerfile,*.dockerfile
